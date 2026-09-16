@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WarmBlue — Reabilitação de imóveis, interiores, exteriores e mediação imobiliária.">
+  <title>WarmBlue | Reabilitação & Mediação Imobiliária</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --blue:#123d63;
+      --blue-2:#1c628f;
+      --ice:#eef7fb;
+      --sand:#f5f1ea;
+      --ink:#18232d;
+      --muted:#667582;
+      --white:#fff;
+      --line:#dfe8ed;
+      --shadow:0 18px 50px rgba(18,61,99,.12);
+      --radius:22px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:"DM Sans",Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .container{width:min(1120px,92%);margin:auto}
+    .topbar{background:var(--blue);color:#dbeaf3;font-size:.88rem}
+    .topbar .container{display:flex;justify-content:space-between;gap:16px;padding:8px 0}
+    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(223,232,237,.8)}
+    .nav{height:78px;display:flex;align-items:center;justify-content:space-between}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.04em;color:var(--blue);font-size:1.35rem}
+    .logo-mark{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--blue),#49a8d6);display:grid;place-items:center;color:#fff;font-weight:800}
+    .menu{display:flex;align-items:center;gap:26px;font-weight:600;color:#365064}
+    .menu a:hover{color:var(--blue-2)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:999px;font-weight:700;border:1px solid transparent;transition:.2s}
+    .btn-primary{background:var(--blue);color:#fff;box-shadow:0 8px 20px rgba(18,61,99,.18)}
+    .btn-primary:hover{transform:translateY(-1px);background:#0d304e}
+    .btn-light{background:#fff;color:var(--blue);border-color:#d6e3ea}
+    .hero{padding:88px 0 70px;background:
+      radial-gradient(circle at 80% 20%,rgba(73,168,214,.20),transparent 35%),
+      linear-gradient(135deg,#f7fbfd 0%,#fff 55%,#eef7fb 100%)}
+    .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:60px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--blue-2);font-weight:800;text-transform:uppercase;letter-spacing:.12em;font-size:.75rem}
+    .eyebrow:before{content:"";width:28px;height:2px;background:#59acd2}
+    h1,h2,h3{line-height:1.15;margin:0 0 18px}
+    h1{font-family:"Playfair Display",serif;font-size:clamp(3rem,6vw,5.4rem);max-width:740px}
+    h2{font-family:"Playfair Display",serif;font-size:clamp(2.2rem,4vw,3.3rem)}
+    .hero p{font-size:1.12rem;color:var(--muted);max-width:650px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .hero-card{background:#fff;border:1px solid rgba(223,232,237,.9);border-radius:28px;overflow:hidden;box-shadow:var(--shadow)}
+    .hero-image{height:480px;background:
+      linear-gradient(145deg,rgba(18,61,99,.04),rgba(28,98,143,.18)),
+      url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85") center/cover}
+    .hero-card-bottom{padding:20px 22px;display:flex;justify-content:space-between;align-items:center;gap:15px}
+    .hero-card-bottom strong{font-size:1rem}
+    .hero-card-bottom span{color:var(--muted);font-size:.9rem}
+    section{padding:92px 0}
+    .section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:44px}
+    .section-head p{max-width:580px;color:var(--muted);margin:0}
+    .services{background:#fff}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .card{padding:30px;border:1px solid var(--line);border-radius:var(--radius);background:#fff;box-shadow:0 8px 28px rgba(24,35,45,.05)}
+    .icon{width:52px;height:52px;border-radius:15px;background:var(--ice);color:var(--blue);display:grid;place-items:center;font-size:1.35rem;margin-bottom:22px}
+    .card h3{font-size:1.25rem;margin-bottom:10px}
+    .card p{color:var(--muted);margin:0}
+    .about{background:var(--sand)}
+    .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
+    .about-photo{min-height:470px;border-radius:28px;background:
+      linear-gradient(180deg,rgba(18,61,99,.04),rgba(18,61,99,.20)),
+      url("https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85") center/cover}
+    .checklist{display:grid;gap:12px;margin:25px 0 0;padding:0;list-style:none}
+    .checklist li{display:flex;gap:12px;align-items:flex-start}
+    .check{width:23px;height:23px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-size:.75rem;flex:0 0 23px;margin-top:2px}
+    .projects-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:20px}
+    .project{min-height:250px;border-radius:22px;overflow:hidden;position:relative;background-size:cover;background-position:center;display:flex;align-items:end}
+    .project.large{min-height:520px}
+    .project:nth-child(1){background-image:url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=85")}
+    .project:nth-child(2){background-image:url("https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=85")}
+    .project:nth-child(3){background-image:url("https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=900&q=85")}
+    .project-copy{width:100%;padding:24px;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.72))}
+    .project-copy small{opacity:.8}
+    .project-copy h3{margin:5px 0 0;font-size:1.3rem}
+    .realestate{background:var(--blue);color:#fff}
+    .realestate .section-head p{color:#c6d9e5}
+    .estate-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .estate-card{background:#fff;color:var(--ink);border-radius:22px;overflow:hidden}
+    .estate-photo{height:230px;background-size:cover;background-position:center}
+    .estate-card:nth-child(1) .estate-photo{background-image:url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=85")}
+    .estate-card:nth-child(2) .estate-photo{background-image:url("https://images.unsplash.com/photo-1600566753051-0f5f1a4f2c7c?auto=format&fit=crop&w=900&q=85")}
+    .estate-info{padding:24px}
+    .estate-info h3{margin-bottom:6px}
+    .estate-info p{color:var(--muted);margin:0 0 16px}
+    .contact{background:#f8fbfd}
+    .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:50px}
+    .contact-box{display:grid;gap:15px;margin-top:25px}
+    .contact-item{padding:17px 18px;border:1px solid var(--line);border-radius:15px;background:#fff}
+    .contact-item small{display:block;color:var(--muted);margin-bottom:3px}
+    form{background:#fff;border:1px solid var(--line);padding:28px;border-radius:22px;box-shadow:0 10px 30px rgba(24,35,45,.05)}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+    label{font-weight:700;font-size:.9rem}
+    input,textarea,select{width:100%;margin-top:7px;padding:13px 14px;border:1px solid #d4e0e6;border-radius:12px;font:inherit;outline:none;background:#fff}
+    input:focus,textarea:focus,select:focus{border-color:#6aaecf;box-shadow:0 0 0 3px rgba(106,174,207,.15)}
+    textarea{min-height:140px;resize:vertical}
+    .field{margin-bottom:15px}
+    footer{background:#0d2d48;color:#c9d8e2;padding:34px 0}
+    .footer-grid{display:flex;justify-content:space-between;gap:30px;align-items:center}
+    footer strong{color:#fff}
+    footer p{margin:0;font-size:.9rem}
+    .mobile-toggle{display:none;background:none;border:0;font-size:1.5rem;color:var(--blue)}
+    @media(max-width:900px){
+      .menu{display:none}
+      .mobile-toggle{display:block}
+      .hero-grid,.about-grid,.contact-grid,.estate-grid{grid-template-columns:1fr}
+      .cards{grid-template-columns:1fr}
+      .projects-grid{grid-template-columns:1fr}
+      .project.large{min-height:380px}
+      .hero{padding-top:55px}
+      .hero-image{height:360px}
+      .section-head{display:block}
+      .section-head p{margin-top:14px}
+    }
+    @media(max-width:560px){
+      .topbar .container{font-size:.78rem}
+      .row{grid-template-columns:1fr}
+      section{padding:70px 0}
+      .nav{height:70px}
+      h1{font-size:2.7rem}
+      .hero-actions .btn{width:100%}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container">
+      <span>Reabilitação • Interiores • Exteriores • Mediação Imobiliária</span>
+      <span>Porto · Portugal</span>
+    </div>
+  </div>
+
+  <header>
+    <nav class="nav container">
+      <a class="logo" href="#inicio"><span class="logo-mark">W</span> WARMBLUE</a>
+      <div class="menu">
+        <a href="#servicos">Serviços</a>
+        <a href="#empresa">A empresa</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#imoveis">Imóveis</a>
+        <a class="btn btn-primary" href="#contacto">Fale connosco</a>
+      </div>
+      <button class="mobile-toggle" aria-label="Abrir menu" onclick="document.querySelector('.menu').classList.toggle('open')">☰</button>
+    </nav>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Transformamos espaços</div>
+          <h1>Casas com mais vida. Imóveis com mais valor.</h1>
+          <p>A WarmBlue une reabilitação de imóveis e mediação imobiliária para acompanhar cada projeto, da primeira ideia à entrega — e da valorização à venda.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contacto">Pedir orçamento</a>
+            <a class="btn btn-light" href="#imoveis">Ver imóveis</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-image"></div>
+          <div class="hero-card-bottom">
+            <div><strong>Reabilitação com propósito</strong><br><span>Interior e exterior</span></div>
+            <span>WarmBlue</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicos" class="services">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">O que fazemos</div>
+            <h2>Soluções completas para o seu imóvel</h2>
+          </div>
+          <p>Um único parceiro para renovar, valorizar e comercializar propriedades com uma abordagem prática, cuidada e orientada ao resultado.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="icon">⌂</div>
+            <h3>Reabilitação Interior</h3>
+            <p>Remodelação de cozinhas, casas de banho, pavimentos, pinturas, iluminação e criação de ambientes funcionais.</p>
+          </article>
+          <article class="card">
+            <div class="icon">◫</div>
+            <h3>Reabilitação Exterior</h3>
+            <p>Fachadas, terraços, muros, pavimentos exteriores e melhoria da imagem e desempenho do imóvel.</p>
+          </article>
+          <article class="card">
+            <div class="icon">↗</div>
+            <h3>Mediação Imobiliária</h3>
+            <p>Apoio na compra e venda de imóveis, com acompanhamento próximo e foco na apresentação e valorização do ativo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="empresa" class="about">
+      <div class="container about-grid">
+        <div class="about-photo" aria-label="Interior de imóvel reabilitado"></div>
+        <div>
+          <div class="eyebrow">A WarmBlue</div>
+          <h2>Experiência, cuidado e visão sobre o imóvel.</h2>
+          <p>Na WarmBlue acreditamos que uma boa reabilitação não é apenas estética: deve melhorar a utilização do espaço, aumentar o conforto e contribuir para a valorização do imóvel.</p>
+          <ul class="checklist">
+            <li><span class="check">✓</span><span><strong>Planeamento</strong><br>Definimos prioridades e uma estratégia clara para cada projeto.</span></li>
+            <li><span class="check">✓</span><span><strong>Acompanhamento</strong><br>Coordenamos cada etapa com atenção ao detalhe.</span></li>
+            <li><span class="check">✓</span><span><strong>Valorização</strong><br>Pensamos a obra também à luz do potencial futuro do imóvel.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projetos">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Portefólio</div>
+            <h2>Projetos que dão forma à mudança</h2>
+          </div>
+          <p>Substitua estas imagens e descrições pelos seus trabalhos reais para criar um portefólio comercial da WarmBlue.</p>
+        </div>
+        <div class="projects-grid">
+          <div class="project large"><div class="project-copy"><small>Reabilitação integral</small><h3>Renovação de apartamento urbano</h3></div></div>
+          <div class="project"><div class="project-copy"><small>Interior</small><h3>Ambiente contemporâneo</h3></div></div>
+          <div class="project"><div class="project-copy"><small>Exterior</small><h3>Requalificação de fachada</h3></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="imoveis" class="realestate">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Mediação imobiliária</div>
+            <h2>Imóveis com potencial</h2>
+          </div>
+          <p>Área preparada para destacar oportunidades, imóveis reabilitados ou propriedades em comercialização.</p>
+        </div>
+        <div class="estate-grid">
+          <article class="estate-card">
+            <div class="estate-photo"></div>
+            <div class="estate-info">
+              <h3>Apartamento T2 · Porto</h3>
+              <p>Exemplo de anúncio — substitua pelos dados reais do imóvel.</p>
+              <a class="btn btn-primary" href="#contacto">Saber mais</a>
+            </div>
+          </article>
+          <article class="estate-card">
+            <div class="estate-photo"></div>
+            <div class="estate-info">
+              <h3>Moradia · Norte</h3>
+              <p>Exemplo de anúncio — substitua pelos dados reais do imóvel.</p>
+              <a class="btn btn-primary" href="#contacto">Saber mais</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="contact">
+      <div class="container contact-grid">
+        <div>
+          <div class="eyebrow">Contactos</div>
+          <h2>Vamos falar sobre o seu imóvel?</h2>
+          <p>Conte-nos o que pretende reabilitar, vender ou comprar. A WarmBlue entra em contacto consigo para perceber o projeto.</p>
+          <div class="contact-box">
+            <div class="contact-item"><small>Telefone</small><strong>+351 9XX XXX XXX</strong></div>
+            <div class="contact-item"><small>Email</small><strong>geral@warmblue.pt</strong></div>
+            <div class="contact-item"><small>Localização</small><strong>Porto · Portugal</strong></div>
+          </div>
+        </div>
+        <form onsubmit="event.preventDefault(); alert('Obrigado! Este formulário é uma demonstração. Ligue-o ao seu email/CRM para receber pedidos.');">
+          <div class="row">
+            <div class="field"><label for="nome">Nome</label><input id="nome" required placeholder="O seu nome"></div>
+            <div class="field"><label for="telefone">Telefone</label><input id="telefone" placeholder="+351 ..."></div>
+          </div>
+          <div class="field"><label for="email">Email</label><input id="email" type="email" required placeholder="nome@email.pt"></div>
+          <div class="field"><label for="assunto">Serviço</label>
+            <select id="assunto">
+              <option>Reabilitação interior</option>
+              <option>Reabilitação exterior</option>
+              <option>Mediação imobiliária</option>
+              <option>Outro</option>
+            </select>
+          </div>
+          <div class="field"><label for="mensagem">Mensagem</label><textarea id="mensagem" placeholder="Fale-nos brevemente do seu projeto..."></textarea></div>
+          <button class="btn btn-primary" type="submit">Enviar pedido</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div><strong>WARMBLUE</strong><br><span>Reabilitação & Mediação Imobiliária</span></div>
+      <p>© 2026 WarmBlue. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>
